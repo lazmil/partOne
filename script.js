@@ -1,15 +1,11 @@
-import { config } from 'dotenv';
 import fs from 'fs';
-
-// Load environment variables from .env file
-config();
 
 import { Configuration, OpenAIApi } from 'openai';
 
-// Create an instance of the OpenAIApi using the API key from the environment variables
+// Create an instance of the OpenAIApi using your API key
 const openai = new OpenAIApi(
   new Configuration({
-    apiKey: process.env.API_KEY,
+    apiKey: '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',
   })
 );
 
@@ -35,5 +31,4 @@ fs.readFile(inputFile, 'utf8', async (err, data) => {
   const response = res.data.choices[0].message.content;
   console.log(response);
 });
-
 
